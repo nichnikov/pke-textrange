@@ -13,7 +13,8 @@ text = "Цифра уже давно перешла на сервисный фу
 extractor = pke.unsupervised.TextRank()
 
 extractor.load_document(input=text, language='ru')
-
-keyphrases = extractor.get_n_best(n=3)
+extractor.candidate_selection()
+extractor.candidate_weighting()
+keyphrases = extractor.get_n_best(n=5)
 
 print(keyphrases)
